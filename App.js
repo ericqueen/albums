@@ -7,20 +7,18 @@ import React, { Component } from 'react';
 import {
   Platform,
   StyleSheet,
-  Text,
   View
 } from 'react-native';
+import Header from './src/components/Header';
+import AlbumList from './src/components/AlbumList';
 
 type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
       <View>
-        <Text>
-          Welcome to React Native!
-        </Text>
-
-
+        <Header headerText={'Albums'} />
+        <AlbumList />
       </View>
     );
   }
