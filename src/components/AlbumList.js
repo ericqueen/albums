@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
-import axios from'axios';
+import { View } from 'react-native';
+import axios from'axios'; // Library for handling api calls
+import AlbumDetail from './AlbumDetail';
 
 // Creating the AlbumList component and fetching the data with setting the state
 class AlbumList extends Component {
@@ -12,7 +13,9 @@ class AlbumList extends Component {
 
 // Helper method to map through the array returned from the Get request
 renderAlbums() {
-    return this.state.albums.map(album => <Text>{album.title}</Text>);
+    return this.state.albums.map(album =>
+    <AlbumDetail key={album.title} albums={album} />
+    );
 }
 
 // Rendering the returned albums list using the renderAlbums() method
