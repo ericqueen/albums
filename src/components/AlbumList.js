@@ -20,7 +20,6 @@ renderAlbums() {
 
 // Rendering the returned albums list using the renderAlbums() method
     render() {
-    console.log(this.state);
         return (
             <ScrollView>
                 {this.renderAlbums()}

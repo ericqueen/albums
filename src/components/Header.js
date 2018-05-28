@@ -19,9 +19,8 @@ const styles = {
         justifyContent: 'center',
         alignItems: 'center',
         height: 60,
-        borderBottomWidth: 3,
-        borderBottomColor: '#d3d3d3',
-        elevation: 2,
+        borderBottomWidth: 0,
+        elevation: 6,
         position: 'relative'
     },
     textStyle: {
