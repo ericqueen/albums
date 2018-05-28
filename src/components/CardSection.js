@@ -12,10 +12,11 @@ const styles = {
         borderBottomWidth: 1,
         padding: 5,
         backgroundColor: '#FFF',
-        justifyContent: 'flex-start',
         flexDirection: 'row',
         borderColor: '#DDD',
-        position: 'relative'
+        position: 'relative',
+        justifyContent: 'flex-start',
+
     }
 };
 

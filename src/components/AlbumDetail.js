@@ -1,23 +1,59 @@
 import React from 'react';
-import { Text, Image } from 'react-native';
+import { Text, View, Image } from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
+import Button from './Button';
 
-const AlbumDetail = (props) => {
+const AlbumDetail = ({ albums }) => {
+    const { title, artist, thumbnail_image, image } = albums;
+
+    const { headerContent, thumbnailStyle,
+    thumbnailContainerStyle, headerTextStyle, imageStyle } = styles;
+
     return (
         <Card>
             <CardSection>
-                <Image style={{width: 50, height: 50}} marginRight={5} source={{uri:props.albums.thumbnail_image}} />
-                <Text>{props.albums.artist}</Text>
+                <View style={thumbnailContainerStyle}>
+                    <Image style={styles.thumbnailStyle} source={{uri:thumbnail_image}}/>
+                </View>
+                <View style={headerContent}>
+                    <Text style={headerTextStyle}>{title}</Text>
+                    <Text>{artist}</Text>
+                </View>
             </CardSection>
             <CardSection>
-                <Text>{props.albums.title}</Text>
+                <Image style={imageStyle} source={{ uri: image }}/>
             </CardSection>
             <CardSection>
-                <Image style={{width: 300, height: 300}} marginRight={5} source={{uri:props.albums.image}} />
+                <Button />
             </CardSection>
         </Card>
     );
+};
+
+const styles = {
+    headerContent: {
+        flexDirection: 'column',
+        justifyContent: 'space-around'
+    },
+    headerTextStyle: {
+        fontSize: 18
+    },
+    thumbnailStyle: {
+        width: 50,
+        height: 50
+    },
+    thumbnailContainerStyle: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginLeft: 10,
+        marginRight: 10
+    },
+    imageStyle: {
+        height: 300,
+        flex: 1,
+        width: null
+    }
 };
 
 export default AlbumDetail;
